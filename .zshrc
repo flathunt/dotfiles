@@ -57,7 +57,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 if [ -d /home/linuxbrew ]
 then
-  eval "$(fzf --fzf)"
   test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
   test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
