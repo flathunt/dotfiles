@@ -51,7 +51,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias ls='ls --color'
 
-eval "$(fzf)"
+eval "$(fzf --zsh)"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
