@@ -55,9 +55,12 @@ eval "$(fzf --zsh)"
 
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+if [ -d /home/linuxbrew ]
+then
+  test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+  test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+fi
 
 alias pi3='ssh cottrellsoflondon.com -p 22'
 alias pi5='ssh cottrellsoflondon.com -p 225'
